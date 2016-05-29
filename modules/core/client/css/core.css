@@ -1,0 +1,105 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+
+
+ng-map {
+    height:90vh !important;
+}
+
+
+.arrow_box {
+	    position: relative;
+    background: red;
+    border: 1px solid red;
+    border-radius: 50px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 5px 0 5px;
+  border-color: red transparent transparent transparent;
+  margin-left: -5px;
+  margin-top: 2px;
+}
+
+
+.usa{
+      overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: block;
+}
+.usa img{
+  height: 50px;
+}
+
+.md-media-xl{
+  overflow: hidden;
+}
+.md-media-xl img{
+  height: 240px;
+}
+
+ng-map md-card{
+  box-shadow: none;
+  margin-right: 25px;
+}
+
+ng-map md-card-actions{
+  margin-left: 18px;
+    position: absolute;
+    height: 240px;
+}
+
+ng-map md-card md-card-content .md-media-xl {
+    width: auto; 
+    max-width: 500px;
+}

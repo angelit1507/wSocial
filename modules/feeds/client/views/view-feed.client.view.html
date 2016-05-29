@@ -1,0 +1,33 @@
+<section>
+    <div class="page-header">
+        <h1 data-ng-bind="vm.feed.name"></h1>
+    </div>
+    <div class="pull-right" data-ng-show="vm.feed.isCurrentUserOwner">
+        <a class="btn btn-primary" data-ui-sref="feeds.edit({ feedId: vm.feed._id })">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="vm.remove()">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <small>
+    <em class="text-muted">
+      Posted on
+      <span data-ng-bind="vm.feed.created | date:'mediumDate'"></span>
+      by
+      <span data-ng-if="vm.feed.user"
+            data-ng-bind="vm.feed.user.displayName"></span>
+      <span data-ng-if="!vm.feed.user">Deleted User</span>
+    </em>
+  </small>
+    <p>
+        {{(vm.feed.activities | filter: 'Like').length}} <span ng-class="{'glyphicon glyphicon-thumbs-up':!vm.feed.isCurrentUserLiked, 'glyphicon glyphicon-thumbs-down':vm.feed.isCurrentUserLiked}" ng-click="vm.like(vm.feed);"></span>
+        
+        {{(vm.feed.activities | filter: 'Comment').length}} <span class="glyphicon glyphicon-edit"></span>
+    </p>
+    <p class="lead" data-ng-bind="vm.feed.content"></p>
+</section>
+<section>
+    <input class="form-control" ng-model="vm.commentData"/>
+    <button class="btn btn-primary" ng-click="vm.comment(vm.feed)">Post</button>
+</section>
