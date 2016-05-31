@@ -44,11 +44,11 @@ ng-map {
 
 .arrow_box {
 	    position: relative;
-    background: red;
-    border: 1px solid red;
+    background: white;
+    border: 1px solid white;
     border-radius: 50px;
 }
-.arrow_box:after, .arrow_box:before {
+/*.arrow_box:after, .arrow_box:before {
 	top: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -67,7 +67,7 @@ ng-map {
   border-color: red transparent transparent transparent;
   margin-left: -5px;
   margin-top: 2px;
-}
+}*/
 
 
 .usa{
@@ -103,3 +103,23 @@ ng-map md-card md-card-content .md-media-xl {
     width: auto; 
     max-width: 500px;
 }
+
+
+md-sidenav md-toolbar {
+    padding: 15px;
+    height: 150px;
+    max-height: 150px;
+  }
+  md-sidenavmd-list-item.md-2-line .md-list-item-text {
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+  md-sidenav md-divider {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+.md-avatar {
+    height: 64px;
+    width: 64px;
+  }

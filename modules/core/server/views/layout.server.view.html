@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -33,17 +34,47 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Application CSS Files -->
-  {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+  {% for cssFile in cssFiles %}
+  <link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 </head>
 
-<body class="ng-cloak">
-  <div layout="column" layout-fill>
-   <md-toolbar red>
-    <header ng-include="'/modules/core/client/views/header.client.view.html'" class="md-toolbar-tools"></header>
-  </md-toolbar>
-  <md-content>
-    {% block content %}{% endblock %}
-  </md-content>
+<body class="ng-cloak" layout="row">
+  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" >
+    <md-toolbar class="md-hue-2">
+      <span flex></span>
+      <div layout="row" layout-align="start center">
+        <md-icon class="md-avatar" >mood</md-icon>
+        <span flex></span>
+      </div>
+      <span flex></span>
+      <div class="md-body-2">Firstname Lastname</div>
+      <div class="md-body-1">email@domainname.com</div>
+    </md-toolbar>
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat="item in menu" role="link" md-ink-ripple>
+        <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+        <div class="md-list-item-text">
+          <span class="md-body-2">{{item.title}}</span>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-subheader class="md-no-sticky">Management</md-subheader>
+      <md-list-item class="md-2-line" ng-repeat="item in admin" role="link" md-ink-ripple>
+        <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+        <div class="md-list-item-text">
+          <span class="md-body-2">{{item.title}}</span>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <div layout="column" class="relative" layout-fill role="main">
+    <div ng-include="'/modules/core/client/views/header.client.view.html'"></div>
+    <md-content flex>
+      <ui-view layout="column" layout-fill>
+        {% block content %}{% endblock %}
+      </ui-view>
+    </md-content>
+  </div>
 
   <!--Embedding The User Object-->
   <script type="text/javascript">
@@ -54,9 +85,8 @@
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   <script src="http://maps.google.com/maps/api/js?key=AIzaSyBRWUTW4btyXfNzN7Y8JKr9lC6m9pIcDwA"></script>
   <!--Application JavaScript Files-->
-  {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
-
-  {% if livereload %}
+  {% for jsFile in jsFiles %}
+  <script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} {% if livereload %}
   <!--Livereload script rendered -->
   <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
   {% endif %}

@@ -1,0 +1,17 @@
+<md-dialog aria-label="Form" flex="50">
+    <md-content class="md-no-momentum md-padding">
+        <md-input-container class="md-block" flex>
+            <textarea ng-model="vm.feed.content" placeholder="message" columns="2"></textarea>
+        </md-input-container>
+        
+        <md-input-container class="md-icon-float md-icon-right md-block">
+            <md-icon>location_on</md-icon>
+            <input ng-model="vm.feed.location" placeholder="location">
+            <md-icon >gps_fixed</md-icon>
+        </md-input-container>
+    </md-content>
+    <div class="md-actions" layout="row"> <span flex></span>
+        <md-button> Cancel </md-button>
+        <md-button class="md-primary"> Save </md-button>
+    </div>
+</md-dialog>

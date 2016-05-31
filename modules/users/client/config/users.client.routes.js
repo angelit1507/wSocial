@@ -11,8 +11,8 @@ angular.module('users').config(['$stateProvider',
                 controller: 'UserFeedsController',
                 controllerAs: 'vm'
             })
-            .state('userfriends', {
-                url: '/users/friends',
+            .state('friends', {
+                url: '/user/friends',
                 templateUrl: 'modules/users/client/views/friends/list-friends.client.view.html',
                 controller: 'UserFriendsController',
                 controllerAs: 'vm'

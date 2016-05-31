@@ -1,12 +1,44 @@
-<section>
-    <div class="page-header">
-        <h1>User Friends</h1>
-    </div>
-    <div class="page-body">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="friend in vm.friends">
-                <span ng-bind="friend.displayName"></span>
-            </li>
-        </ul>
-    </div>
-</section>
+ <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="vm.showAdd($event)">
+        <md-icon  aria-label="location on">location_on</md-icon>
+      </md-button>
+<ng-map center="da nang" zoom="6">
+    <custom-marker position="{{user.location}}" on-click="showDetail(user)" id="{{user.id}}" ng-repeat="user in vm.users">
+      <md-tooltip md-direction="right">
+          {{user.name}}
+        </md-tooltip>
+      <div class="arrow_box">
+        <div class="usa">
+          <img ng-src="{{user.image}}"
+          />
+        </div>
+      </div>
+    </custom-marker>
+    
+    <info-window id="foo-iw">
+      <div ng-non-bindable="">
+        <div flex-xs flex-gt-xs="100" layout="column">
+          <md-card md-theme="default" md-theme-watch="" class="md-default-theme">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Card with image</span>
+                <span class="md-subhead">Extra Large</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between" class="layout-align-space-between-stretch layout-row">
+              <div class="md-media-xl card-media">
+                <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/12705605_1002716633134624_3109403205310140243_n.jpg?oh=3ffa0f9c43ae93dbdc561ddcf8f7321a&oe=57D150FA"
+                />
+              </div>
+
+              <md-card-actions layout="column" class="layout-column">
+                <md-icon class="icon_home" aria-label="Home">favorite</md-icon>
+                <md-icon class="icon_home" aria-label="Home">directions</md-icon>
+                <md-icon class="icon_home" aria-label="Home">email</md-icon>
+              </md-card-actions>
+            </md-card-content>
+          </md-card>
+
+        </div>
+      </div>
+    </info-window>
+  </ng-map>

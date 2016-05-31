@@ -20,6 +20,8 @@
     vm.save = save;
     vm.like = like;
     vm.comment = comment;
+    
+    vm.feed.location = "171 đình phong phú";
 
     // Remove existing Feed
     function remove() {
